@@ -1,0 +1,27 @@
+<div id="newUser" name="newUser">
+
+	<section class="jumbotron">
+		<h1>Add New User</h1></section>
+
+	<section>
+
+		<form name="registerForm" id="registerForm" novalidate>
+
+			<br> Email:
+			<input type="email" class="form-control" id="email" name="email" ng-model="form.email" required>
+
+			<span style="color:red" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+            <span style="color:red" ng-show="registerForm.email.$error.required">Email is required.</span>
+			<span style="color:red" ng-show="registerForm.email.$error.email">Invalid email address.</span>
+			</span>
+
+			<br>Password:
+			<input type="password" id="password" name="password" class="form-control" ng-model="form.password" required />
+			<span ng-show="registerForm.password.$error.required && registerForm.password.$dirty">required</span>
+
+			<button type="submit" class="btn" ng-disabled="registerForm.email.$dirty && registerForm.email.$invalid||registerForm.email.$error.required||registerForm.email.$error.email||registerForm.password.$error.required && registerForm.password.$dirty" ng-click="register()">addUser</button>
+		</form>
+
+	</section>
+
+</div>

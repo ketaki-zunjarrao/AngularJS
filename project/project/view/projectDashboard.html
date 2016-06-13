@@ -1,0 +1,46 @@
+<home-navbar>
+</home-navbar>
+<br>
+<div id="welcome" name="welcome">
+	<div id="addProject" align="center">
+		<form name="" id="">
+			<table>
+				<tr>
+					<td>
+						<input type="text" placeholder="Project Title" class="form-control" ng-model="projectForm.newProjectName" required>
+					</td>
+					<td>
+						&nbsp; &nbsp;
+						<button type="submit" class="btn btn-info" ng-click="add()">Add Project</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<br>
+	<section>
+
+		<h1><font size="5" color="Magenta" face="Times New Roman"><b>Projects</b></font></h1>
+		<div class="row">
+			<div ng-repeat="project in user.projects ">
+				<div class="col-sm-6 col-md-4 col-lg-3 ">
+					<div class="panel panel-default ">
+						<font color="blue "><b>{{project.projectName}}</b></font>
+						<br>
+						<br>
+						<font color="green">Created On : {{project.date}}</font>
+						<br>
+						<font color="blue">No. of tasks : {{project.noOfTasks}}</font>
+						<br>
+						<a href="#/deleteProject" ng-click="delete(project.projectName)">Delete | </a>
+						<a href="#/editProject" ng-click="getOldProjectName(project.projectName)">Edit | </a>
+						<a href="#/listTasks" ng-click="listTasks(project.projectName)">List Tasks | </a>
+						<a href="#/addTasks">Add Tasks</a>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</div>

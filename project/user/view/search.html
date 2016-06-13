@@ -1,0 +1,39 @@
+<home-navbar>
+</home-navbar>
+
+<div class="col-sm-6 col-md-4 col-lg-6" align="center">
+	<section>
+		<input type=text ng-model="form.search" name="form.search" id="form.search" required> Search By Task Name
+		
+
+	</section>
+
+	{{form.search}}
+	<div align="center">
+		<table border="2" class="table">
+			<tr class="danger">
+				<td>Project Name </td>
+				<td>Task Name </td>
+				<td>Added On </td>
+				<td>Due Date </td>
+				<td>Importance </td>
+				<td>Status </td>
+				<td>Delete</td>
+			</tr>
+
+
+			<tr class="success" ng-repeat="item in taskList | orderBy :'listedTask.title' | searchByTaskName: form.search">
+
+				<td>{{item.listedProject.projectName}}</td>
+				<td>{{item.listedTask.title}}</td>
+				<td>{{item.listedProject.date}}</td>
+				<td>{{item.listedTask.dueDate}}</td>
+				<td>{{item.listedTask.importance}}</td>
+				<td>{{item.listedTask.status}}</td>
+				<td>
+					<a href="#/deleteTask" ng-click="delete(item.listedTask.title,item.listedProject,item.listedUser)">Delete</a></td>
+
+			</tr>
+		</table>
+	</div>
+</div>

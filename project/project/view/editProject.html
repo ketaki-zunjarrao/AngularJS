@@ -1,0 +1,33 @@
+<home-navbar>
+</home-navbar>
+
+<div id="editProject" align="center">
+
+	<section class="jumbotron">
+		<font color="brown" face="Times new roman"><h1> Edit Project</h1></font>
+	</section>
+	<form name="" id="">
+		<table>
+			<tr>
+				<td>
+					<input type="text" class="form-control" ng-model="oldProjectName">
+				</td>
+				<td>
+					&nbsp; &nbsp; Old Name
+				</td>
+			</tr>
+
+
+			<tr>
+				<td>
+					<input type="text" placeholder="Project Title" class="form-control" ng-model="projectForm.newProjectName" required>
+				</td>
+				<td>
+					&nbsp; &nbsp; New Name
+				</td>
+			</tr>
+
+		</table>
+		<button type="submit" class="btn btn-warning" ng-click="edit()">Rename Project</button>
+	</form>
+</div>

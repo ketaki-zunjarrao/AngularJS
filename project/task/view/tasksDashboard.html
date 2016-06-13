@@ -1,0 +1,31 @@
+<home-navbar>
+</home-navbar>
+<br>
+<div id="taskDashboard" name="taskDashboard">
+	<section class="jumbotron" align="center">
+		<font color="brown" face="Times new roman"><h1>Tasks of {{project.projectName}}</h1></font>
+	</section>
+
+	<section id="addTask">
+		<a href="#/addTasks"><b>Add Task</b></a>
+	</section>
+	<br>
+	<div class="row">
+		<div ng-repeat="task in project.tasks ">
+			<div class="col-sm-6 col-md-4 col-lg-3 ">
+				<div class="panel panel-default ">
+					<font color="orange "><b>{{task.title}}</b></font>
+					<br>
+					<br>
+					<font color="green">Due Date : {{task.dueDate}}</font>
+					<br>
+					<br>
+					<a href="#/deleteTask" ng-click="delete(task.title,project,user)">Delete | </a>
+					<a href="#/editTask" ng-click="getOldTaskName(task.title)">Edit | </a>
+					<a href="#/taskDetails" ng-click="getDetails(task.title)">Details </a>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

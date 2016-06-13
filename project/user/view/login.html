@@ -1,0 +1,26 @@
+<login-navbar>
+</login-navbar>
+<br>
+<div id="home" name="home">
+	<section>
+		<font size="3" color="red" face="Times new roman"> <h1>Login</h1></font>
+
+		<form name="loginForm" id="loginForm" novalidate>
+
+			<br> Email:
+			<input type="email" class="form-control" id="email" name="email" ng-model="form.email" required>
+
+			<span style="color:red" ng-show="loginForm.email.$dirty && loginForm.email.$invalid">
+            <span style="color:red" ng-show="loginForm.email.$error.required">Email is required.</span>
+			<span style="color:red" ng-show="loginForm.email.$error.email">Invalid email address.</span>
+			</span>
+
+			<br>Password:
+			<input type="password" id="password" name="password" class="form-control" ng-model="form.password" required />
+			<span ng-show="loginForm.password.$error.required && loginForm.password.$dirty">required</span>
+
+			<button type="submit" class="btn btn-success" ng-disabled="loginForm.email.$dirty && loginForm.email.$invalid||loginForm.email.$error.required||loginForm.email.$error.email||loginForm.password.$error.required && loginForm.password.$dirty" ng-click="submit()">login</button>
+		</form>
+
+	</section>
+</div>
