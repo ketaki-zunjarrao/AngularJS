@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        .checkoutbutton {
+            background-color: #210a1a;
+            moz-border-radius: 50px;
+            -webkit-border-radius: 15px;
+            /*border: 5px solid #009900;*/
+            padding: 5px;
+            color: white;
+        }
+    </style>
+</head>
+<body ng-app="app" ng-controller="CssController">
+<article><br>
+
+    <div class="col-md-4 col-md-offset-4">
+        <b class="well">Allignments:</b>&nbsp;
+        <span class="well glyphicon glyphicon-align-right" ng-click="setAlignment('right')" uib-popover="Right allignment" popover-trigger="mouseenter"> </span>
+        &nbsp;<span class="well glyphicon glyphicon-align-left" ng-click="setAlignment('left')"></span>
+        &nbsp;<span class="well glyphicon glyphicon-align-center" ng-click="setAlignment('center')"></span>
+
+        <div ng-style="{'text-align': algmnt}">
+
+            What is Lorem Ipsum?
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+            Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+        <button class=" btn btn-info">submit my info</button>
+    </div>
+</article>
+
+</body>
+<script src="https://code.angularjs.org/1.5.0/angular.js"></script>
+<link rel="stylesheet " href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css ">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js "></script>
+<script src="https://cdn.jsdelivr.net/angular.bootstrap/1.3.2/ui-bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/angular.bootstrap/1.3.2/ui-bootstrap-tpls.min.js"></script>
+<script src="DynamicCSS.js"></script>
+</html>

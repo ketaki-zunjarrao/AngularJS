@@ -1,0 +1,24 @@
+<html>
+
+<body data-ng-app="techlabs">
+    <section ng-controller="BindingController">
+        Name:
+        <input type="text" ng-model="student.name">
+        home<br>ID:
+        <input type="text" ng-model="student.id">
+        <br>
+        <br>
+        <section>
+            Color:
+            <input type="text" ng-model="color"> <span ng-style="{'color': color}">{{student.name}}</span>
+        </section>
+    </section>
+</body>
+
+<script src="https://code.angularjs.org/1.5.0/angular.js">
+</script>
+
+<script src="TestBinding.js">
+</script>
+
+</html>

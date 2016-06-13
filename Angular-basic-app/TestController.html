@@ -1,0 +1,55 @@
+<html>
+
+<body data-ng-app="techlabs">
+    <section ng-controller="InvoiceController" id="Invoice">
+        <h1>{{company}}</h1>
+
+        <h2>{{job||"Yet to Join"}}</h2>
+        <h2>Name: {{invoice.name}}</h2>
+        <h2>ID: {{invoice.id}}</h2>
+        <h2>Price: {{invoice.price}}</h2>
+    </section>
+
+    <section ng-controller="OrganizerController" id="Oragizer">
+        <h2>ID: {{organizer.id}}</h2>
+        <h2>TalentID: {{organizer.tenantId}}</h2>
+        <h2>Name: {{organizer.name}}</h2>
+        <h2>Description:{{organizer.description}}</h2>
+
+    </section>
+    <section ng-controller="ExhibitionsController" id="Exhibitions">
+
+        <h1>Looping over Exhibitions</h1>
+
+        <h1>{{company}}</h1>
+        <ul>
+            <li ng-repeat="exhibition in exhibitions">{{exhibition.name}} </li>>
+        </ul>
+        <table border="2">
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Start Date</td>
+                <td>End Date</td>
+                <td>Is Active</td>
+            </tr>
+            <tr ng-repeat="exhibition in exhibitions">
+                <td>>{{exhibition.id}}</td>
+                <td>>{{exhibition.name}}</td>
+                <td>>{{exhibition.description}}</td>
+                <td>>{{exhibition.startDate}}</td>
+                <td>>{{exhibition.endDate}}</td>
+                <td>>{{exhibition.isActive}}</td>
+            </tr>
+
+        </table>
+    </section>
+</body>
+<script src="https://code.angularjs.org/1.5.0/angular.js">
+</script>
+
+<script src="TestController.js">
+</script>
+
+</html>

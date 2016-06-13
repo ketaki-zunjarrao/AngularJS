@@ -1,0 +1,134 @@
+<html>
+
+<body ng-app="techlabs" ng-controller="StudentController">
+
+    <div class="jumbotron warning">
+        <h1><span class="glyphicon glyphicon-heart"/> Student CRUD </h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-md-6 col-lg-12">
+            <section id="studentDetails" ng-init="getStudents()">
+                <table class="table" border="2">
+                    <tr>
+                        <h1>Student Details</h1></tr>
+                    <tr>
+                        <td><b>RollNo</b></td>
+                        <td><b>Name</b></td>
+                        <td><b>Age</b></td>
+                        <td><b>Email</b></td>
+                        <td><b>DOB</b></td>
+                        <td><b>IsMale</b></td>
+                        <td><b>Delete</b></td>
+
+                    </tr>
+                    <tr ng-repeat="student in students">
+                        <td>{{student.rollNo}}</td>
+                        <td>{{student.name}}</td>
+                        <td>{{student.age}}</td>
+                        <td>{{student.email}}</td>
+                        <td>{{student.date}}</td>
+                        <td>{{student.isMale}}</td>
+                        <td>
+                            <button ng-click="deleteStudent(student.rollNo)" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+    </div>
+    <div>
+        <div class="row">
+
+            <div class="col-sm-3 col-md-4 col-lg-6">
+                <form name="studentForm" id="studentForm" novalidate>
+                    <section id="addStudent" class="panel panel panel-default">
+                        <h1>Add Student</h1> RollNo:
+                        <input type="number" ng-model="student.rollNo" class="form-control" required>
+
+                        <br> Name:
+                        <input type="text" id="name" name="name" ng-model="student.name" class="form-control" required>
+                        <span style="color:red" ng-show="studentForm.firstname.$dirty && studentForm.firstname.$invalid"></span>
+                        <span style="color:red" ng-show="studentForm.name.$error.required">The name is required.</span>
+
+                        <br> Email:
+                        <input type="email" ng-model="student.email" class="form-control" id="email" name="email" required>
+
+                        <span style="color:red" ng-show="studentForm.email.$dirty && studentForm.email.$invalid">
+                        <span style="color:red" ng-show="studentForm.email.$error.required">Email is required.</span>
+                        <span style="color:red" ng-show="studentForm.email.$error.email">Invalid email address.</span>
+                        </span>
+
+
+                        <br> Age:
+                        <input type="number" id="age" name="age" ng-model="student.age" class="form-control" min="20" max="30" integer required>
+                        <span style="color:red" ng-show="studentForm.age.$error.required">Age is required.</span>
+                        <span style="color:red" ng-show="studentForm.age.$error.integer">The value is not a valid integer!</span>
+                        <span style="color:red" ng-show="studentForm.age.$error.min || studentForm.age.$error.max"> The value must be in range 20 to 30!</span>
+
+
+
+                        <br> DOB:
+                        <input type=datetime ng-model="student.date" class="form-control" id="date" name="date" required>
+                        <span style="color:red" ng-show="studentForm.date.$error.required">Date is required.</span>
+
+                        <br> IsMale:
+                        <input type="radio" id="gender" name="gender" value="true" ng-model="student.isMale"> True
+                        <input type="radio" id="gender" name="gender" value="false" ng-model="student.isMale"> False
+                        <span style="color:red" ng-show="studentForm.gender.$error.required">You must select the gender</span>
+
+                        <br>
+                        <br>
+                        <button ng-disabled="studentForm.gender.$error.required||studentForm.date.$error.required||studentForm.age.$error.required||studentForm.firstname.$dirty && studentForm.firstname.$invalid||studentForm.name.$error.required||studentForm.email.$dirty && studentForm.email.$invalid||studentForm.email.$error.required||studentForm.email.$error.email||studentForm.age.$error.integer||studentForm.age.$error.min || studentForm.age.$error.max" ng-click="addStudent()" class="btn btn-info"><span class="glyphicon glyphicon-plus"></span>Add</button>
+
+
+                        <button ng-disabled="studentForm.firstname.$dirty && studentForm.firstname.$invalid||studentForm.name.$error.required||studentForm.email.$dirty && studentForm.email.$invalid||studentForm.email.$error.required||studentForm.email.$error.email||studentForm.age.$error.integer||studentForm.age.$error.min || form.age.$error.max" ng-click="updateStudent()" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> Update</button>
+                    </section>
+                </form>
+
+            </div>
+
+            <div class="col-sm-3 col-md-4 col-lg-6">
+                <section id="search" class="panel panel panel-default">
+                    <h1>Search Student</h1>
+                    <b>Roll No:</b>
+                    <input type="number" ng-model="student.rollNo" class="">
+                    <button ng-click="getStudentById()" class="btn btn-info"><span class="glyphicon glyphicon-search"></span>search</button>
+
+                    <table class="table" border="2" class="col-sm-3 col-md-4 col-lg-6">
+                        <tr>
+                            <h1>Student Details</h1></tr>
+                        <tr>
+                            <td><b>RollNo</b></td>
+                            <td><b>Name</b></td>
+                            <td><b>Age</b></td>
+                            <td><b>Email</b></td>
+                            <td><b>DOB</b></td>
+                            <td><b>IsMale</b></td>
+                        </tr>
+                        <tr>
+                            <td>{{aStudent.rollNo}}</td>
+                            <td>{{aStudent.name}}</td>
+                            <td>{{aStudent.age}}</td>
+                            <td>{{aStudent.email}}</td>
+                            <td>{{aStudent.date}}</td>
+                            <td>{{aStudent.isMale}}</td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<link rel="stylesheet " href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css ">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js "></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js "></script>
+<script src="https://code.angularjs.org/1.5.0/angular.js "></script>
+<script src="https://code.angularjs.org/1.5.0/angular-resource.js "></script>
+<script src="https://code.angularjs.org/1.5.0/angular-messages.js "></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js "></script>
+<script src="TestStudent.js "></script>
+
+</html>

@@ -1,0 +1,64 @@
+<html ng-app="techlabs" xmlns="http://www.w3.org/1999/html">
+<head>
+    <style type="text/css">
+        .wrapper {
+            display: inline-block;
+            margin-top: 25px;
+            position: relative;
+        }
+
+        .wrapper img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .wrapper .overlay {
+            position: absolute;
+            top: 10;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /*background-color: rgba(0,0,0,0.25);*/
+            color:#ebdae2;
+        }
+    </style>
+</head>
+<body ng-controller="ExhibitionController">
+
+
+<section><b>Search : </b>
+    <input type="text" ng-model="search" name="search">
+    <br>
+</section>
+<section ng-repeat="exhibition in exhibitions | orderBy :'location' | filter: search">
+    <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="panel panel panel-default">
+            <div class="panel ">
+                <figure class="wrapper">
+                    <img ng-src="{{exhibition.img}}" width="100%" height="280">
+
+                    <div class="overlay">
+                        <figcaption><strong>{{exhibition.id}}
+                            <br>{{exhibition.name}}
+                            <br>{{exhibition.location}}
+                            <br>{{exhibition.state}}
+                            <br>{{exhibition.date}}</strong>
+                        </figcaption>
+
+                        <a href="{{exhibition.venue}}"><span class="glyphicon glyphicon-map-marker"></span></a>
+                        <a href="">About</a>
+                    </div>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+</body>
+<script src="https://code.angularjs.org/1.5.0/angular.js"></script>
+<link rel="stylesheet " href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css ">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js "></script>
+<script src="TestExhibition.js"></script>
+</html>

@@ -1,0 +1,18 @@
+ <section id="organization" name="organization">
+        <h1>Organizer</h1>
+        <button ng-click="getOrganizerClick()" class="btn btn-danger navbar-btn">Get Organization</button>
+        <table class="table" border="2">
+            <tr>
+                <td>ID</td>
+                <td>TenantID</td>
+                <td>Name</td>
+                <td>Description</td>
+            </tr>
+            <tr>
+                <td>{{ organizer.id }}</td>
+                <td>{{organizer.tenantId}}</td>
+                <td>{{organizer.name}}</td>
+                <td>{{organizer.description}}</td>
+            </tr>
+        </table>
+    </section>

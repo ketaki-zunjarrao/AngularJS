@@ -1,0 +1,18 @@
+<html ng-app="techlabs">
+
+<body>
+    <h1 class="jumbotron" align="center"><b>Toggling Spinner</b></h1>
+    <section ng-controller="ToggleController" align="center">
+        <button ng-click="toggle = !toggle" class="btn btn-success"> Spin <span class="glyphicon glyphicon-refresh"></span></button>
+        <br>
+        <img ng-src="{{path}}" ng-show="toggle">
+    </section>
+</body>
+
+<script src="https://code.angularjs.org/1.5.0/angular.js"></script>
+<script src="TogglingSpinner.js"></script>
+<link rel="stylesheet " href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css ">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js "></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js "></script>
+
+</html>

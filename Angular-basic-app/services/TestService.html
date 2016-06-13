@@ -1,0 +1,22 @@
+<html>
+
+<body ng-app="techlabs">
+
+    <section ng-controller="MainCtrl">
+        {{name}}
+        <br>{{date}}
+
+    </section>
+
+    <section ng-controller="SubCtrl">
+        {{version}}
+        <br>{{customer.name}}
+        <br>{{customer.payment}}
+        <br>{{customer.discount();}}
+    </section>
+
+</body>
+<script src="https://code.angularjs.org/1.5.0/angular.js"></script>
+<script src="TestService.js"></script>
+
+</html>

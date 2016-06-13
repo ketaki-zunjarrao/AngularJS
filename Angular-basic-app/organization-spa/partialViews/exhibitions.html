@@ -1,0 +1,21 @@
+<section id="exhibition" name="exhibition">
+    <button ng-click="getEventsClick()" class="btn btn-success navbar-btn">Get Events</button>
+    <table class="table" border="2">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Start Date</td>
+            <td>End Date</td>
+            <td>Is Active</td>
+        </tr>
+        <tr ng-repeat="event in events">
+            <td>{{ event.id }}</td>
+            <td>{{event.name}}</td>
+            <td>{{event.description}}</td>
+            <td>{{event.startDate}}</td>
+            <td>{{event.endDate}}</td>
+            <td>{{event.isActive}}</td>
+        </tr>
+    </table>
+</section>

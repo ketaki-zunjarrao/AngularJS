@@ -1,0 +1,90 @@
+<html>
+
+<body ng-app="techlabs">
+
+    <a href="#organization" class="btn btn-info">Organizer </a>
+
+
+    <a href="#events" class="btn btn-info">Exhibitiobs</a>
+
+
+    <a href="#eventById" class="btn btn-info">ExhibitionById</a>
+
+    <br>
+    <br>
+
+    <section id="organization" name="organization" ng-controller="OrganizerController">
+        <h1>Organizer</h1>
+        <button ng-click="getOrganizerClick()" class="btn btn-danger navbar-btn">Get Organization</button>
+        <table class="table" border="2">
+            <tr>
+                <td>ID</td>
+                <td>TenantID</td>
+                <td>Name</td>
+                <td>Description</td>
+            </tr>
+            <tr>
+                <td>{{ organizer.id }}</td>
+                <td>{{organizer.tenantId}}</td>
+                <td>{{organizer.name}}</td>
+                <td>{{organizer.description}}</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="events" name="events" ng-controller="EventController">
+        <button ng-click="getEventsClick()" class="btn btn-success navbar-btn">Get Events</button>
+        <table class="table" border="2">
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Start Date</td>
+                <td>End Date</td>
+                <td>Is Active</td>
+            </tr>
+            <tr ng-repeat="event in events">
+                <td>{{ event.id }}</td>
+                <td>{{event.name}}</td>
+                <td>{{event.description}}</td>
+                <td>{{event.startDate}}</td>
+                <td>{{event.endDate}}</td>
+                <td>{{event.isActive}}</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="eventById" name="eventById" ng-controller="EventByIdController">
+        <h1>Exhibitions</h1>
+        <b> OrganizationID:</b>
+        <input type="text" id="eventId" ng-model="organizer.organizerId" class="form-control" placeholder="Enter oranizer Id here..">
+        <button ng-click="getEventByIdClick()" class="btn btn-info navbar-btn">Get Event</button>
+        <table class="table" border="2">
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Start Date</td>
+                <td>End Date</td>
+                <td>Is Active</td>
+            </tr>
+            <tr ng-repeat="event in events">
+                <td>{{ event.id }}</td>
+                <td>{{event.name}}</td>
+                <td>{{event.description}}</td>
+                <td>{{event.startDate}}</td>
+                <td>{{event.endDate}}</td>
+                <td>{{event.isActive}}</td>
+            </tr>
+        </table>
+    </section>
+</body>
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://code.angularjs.org/1.5.0/angular.js"></script>
+<script src="https://code.angularjs.org/1.5.0/angular-resource.js"></script>
+<script src="TestResource.js"></script>
+
+</html>

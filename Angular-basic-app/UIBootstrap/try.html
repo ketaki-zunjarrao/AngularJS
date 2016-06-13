@@ -1,0 +1,121 @@
+<html>
+<head>
+    <script src="angular.js"></script>
+    <script src="try.js"></script>
+</head>
+<!--<body ng-app="ngToggle">
+<div ng-controller="AppCtrl">
+    <button ng-click="toggleCustom()">Custom</button>
+        <span ng-hide="custom">From:
+            <input type="text" id="from"/>
+        </span>
+        <span ng-hide="custom">To:
+            <input type="text" id="to"/>
+        </span>
+    <span ng-show="custom"></span>
+</div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en" ng-app="ngToggle" ng-controller="AppCtrl">
+<head>
+    <meta charset="UTF-8">
+    <title>Example of Bootstrap Popover with Close Button</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="angular.js"></script>
+    <script src="try.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover({
+                placement : 'top',
+                html : true,
+                title : 'User Info <a href="#" class="close" data-dismiss="alert">×</a>',
+                content : '<div class="media"><a href="#" class="pull-left"><img src="../images/avatar-tiny.jpg" class="media-object" alt="Sample Image"></a><div class="media-body"><h4 class="media-heading">Jhon Carter</h4><p>Excellent Bootstrap popover! I really love it.</p></div></div> <a href="#" class="close" data-dismiss="alert" onclick="save()">save</a>'
+            });
+            $(document).on("click", ".popover .close" , function(){
+                $(this).parents(".popover").popover('hide');
+            });
+        });
+    </script>
+    <style type="text/css">
+        .bs-example{
+            margin: 200px 150px 0;
+        }
+        .popover-title .close{
+            position: relative;
+            bottom: 3px;
+        }
+    </style>
+</head>
+<body  >
+<div class="bs-example">
+    <button type="button" class="btn btn-primary" data-toggle="popover">Click Me</button>
+</div>
+</body>
+</html>-->
+
+
+
+<head>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="try.js"></script>
+
+
+</head>
+
+<body
+        ng-app="ui.bootstrap.demo"
+        class="container">
+<div  ng-click="myPopover.close()">
+<button
+        class="btn btn-danger"
+        ng-controller="myPopoverCtrl"
+        popover-template="myPopover.templateUrl"
+        popover-title="This is a popover"
+        popover-placement="bottom"
+        popover-trigger="none"
+        popover-is-open="myPopover.isOpen"
+        ng-click="myPopover.open()">Click me!</button>
+</div>
+
+
+<script type="text/ng-template"
+        id="myPopoverTemplate.html">
+    <h2 ng-bind="myPopover.data" />
+    <button class="btn btn-primary"
+            ng-click="myPopover.close()">Close</button>
+    <button class="btn btn-success"
+            ng-click="myPopover.save()">Apply</button>
+
+</script>
+
+
+<!--<div
+        ng-click="level.openTogglePopover()"
+        popover-template="level.changeLevelTemplate"
+        popover-trigger="none"
+        popover-placement="right"
+        popover-is-open="level.togglePopover">
+    <button class="btn btn-default btn-xs" type="button">
+        <span class="glyphicon glyphicon-sort"></span>
+    </button>
+</div>-->
+
+
+vm.togglePopover = false;
+
+vm.openTogglePopover = function() {
+vm.togglePopover = !vm.togglePopover;
+};
+</body>

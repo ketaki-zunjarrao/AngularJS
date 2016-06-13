@@ -1,0 +1,24 @@
+<section id="exhibitionById" name="exhibitionById">
+    <h1>Exhibitions</h1>
+    <b> OrganizationID:</b>
+    <input type="text" id="eventId" ng-model="organizer.organizerId" class="form-control" placeholder="Enter oranizer Id here..">
+    <button ng-click="getEventByIdClick()" class="btn btn-info navbar-btn">Get Event</button>
+    <table class="table" border="2">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Start Date</td>
+            <td>End Date</td>
+            <td>Is Active</td>
+        </tr>
+        <tr ng-repeat="event in events">
+            <td>{{ event.id }}</td>
+            <td>{{event.name}}</td>
+            <td>{{event.description}}</td>
+            <td>{{event.startDate}}</td>
+            <td>{{event.endDate}}</td>
+            <td>{{event.isActive}}</td>
+        </tr>
+    </table>
+</section>
