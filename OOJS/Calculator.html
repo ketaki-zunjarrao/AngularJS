@@ -1,0 +1,44 @@
+<html>
+<title>Calculator</title>
+
+<head>
+    <script src="Calculator.js"></script>
+    <h1 align=center>Simple Calculator</h1>
+</head>
+
+<FORM NAME="Calc">
+    <TABLE BORDER=4 align=center>
+        <TR>
+            <TD>
+                <INPUT TYPE="text" id="Input" NAME="Input" Size="10" style="text-align:right">
+                <br>
+            </TD>
+        </TR>
+        <TR>
+            <TD>
+                <INPUT TYPE="button" NAME="one" VALUE="1" OnClick="Calculator.displayNum(one.value,'Input')">
+                <INPUT TYPE="button" NAME="two" VALUE="2" OnCLick="Calculator.displayNum(two.value,'Input')">
+                <INPUT TYPE="button" NAME="three" VALUE="3" OnClick="Calculator.displayNum(three.value,'Input')">
+                <INPUT TYPE="button" NAME="plus" VALUE="+" OnClick="Calculator.displayNum(plus.value,'Input')">
+                <br>
+                <INPUT TYPE="button" NAME="four" VALUE="4" OnClick="Calculator.displayNum(four.value,'Input')">
+                <INPUT TYPE="button" NAME="five" VALUE="5" OnCLick="Calculator.displayNum(five.value,'Input')">
+                <INPUT TYPE="button" NAME="six" VALUE="6" OnClick="Calculator.displayNum(six.value,'Input')">
+                <INPUT TYPE="button" NAME="minus" VALUE="-" OnClick="Calculator.displayNum(minus.value,'Input')">
+                <br>
+                <INPUT TYPE="button" NAME="seven" VALUE="7" OnClick="Calculator.displayNum(seven.value,'Input')">
+                <INPUT TYPE="button" NAME="eight" VALUE="8" OnCLick="Calculator.displayNum(eight.value,'Input')">
+                <INPUT TYPE="button" NAME="nine" VALUE="9" OnClick="Calculator.displayNum(nine.value,'Input')">
+                <INPUT TYPE="button" NAME="times" VALUE="*" OnClick="Calculator.displayNum(times.value,'Input')">
+                <br>
+                <INPUT TYPE="button" NAME="clear" VALUE="c" OnClick="Calculator.clearDisplay()">
+                <INPUT TYPE="button" NAME="zero" VALUE="0" OnClick="Calculator.displayNum(zero.value,'Input')">
+                <INPUT TYPE="button" NAME="DoIt" VALUE="=" OnClick="Calculator.answer(Input.value,'Input')">
+                <INPUT TYPE="button" NAME="div" VALUE="/" OnClick="Calculator.displayNum(div.value,'Input')">
+                <br>
+            </TD>
+        </TR>
+    </TABLE>
+</FORM>
+
+</html>
